@@ -8,7 +8,9 @@ class FacebooksController < ApplicationController
   def callback
     client.authorization_code = params[:code]
     fb_token = client.access_token! :body
-    fb_profile = FbGraph::User.me(fb_token).fetch
+    fb_profile = FbGraph::User.me(fb_token).fetch(
+      fields: [:id, :name, :username]
+    )
 
     current_account = Account.where(
       fb_uid: fb_profile.identifier
