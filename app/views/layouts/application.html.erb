@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FB Connect Sample</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<%= content_tag :body, class: controller_name do %>
+    <%= render 'layouts/header' %>
+    <div class="main">
+      <%= yield %>
+    </div>
+    <%= render 'layouts/footer' %>
+  <% end %>
+</html>

@@ -1,0 +1,15 @@
+<footer class="page_footer">
+  <% if authenticated? %>
+    <%= form_tag session_path, method: :delete do  %>
+      <%= submit_tag 'Logout' %>
+    <% end %>
+  <% end %>
+  <ul>
+    <li>
+      <%= link_to 'Repository', FbConnect::Application.config.repository %>
+    </li>
+    <li>
+      <small>&copy; <%= link_to 'nov matake', 'https://github.com/nov' %></small>
+    </li>
+  </ul>
+</footer>

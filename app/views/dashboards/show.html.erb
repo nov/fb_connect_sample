@@ -1,0 +1,4 @@
+<article>
+  <h2>Logged-in as FB User #<%= current_account.fb_uid %></h2>
+  <%= image_tag FbGraph::User.new(current_account.fb_uid).picture(type: :large) %>
+</article>
