@@ -1,7 +1,7 @@
 class FacebooksController < ApplicationController
   before_filter :require_anonymous_access
 
-  def show
+  def authorize
     redirect_to client.authorization_uri
   end
 

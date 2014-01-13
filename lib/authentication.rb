@@ -28,7 +28,7 @@ module Authentication
   end
 
   def anonymous_access_required!(e)
-    redirect_to account_url
+    redirect_to dashboard_url
   end
 
   def optional_authentication

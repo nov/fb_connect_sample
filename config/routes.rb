@@ -1,8 +1,9 @@
 FbConnect::Application.routes.draw do
   resource :session,   only: :destroy
   resource :dashboard, only: :show
-  resource :facebook,  only: :show do
+  resource :facebook do
     member do
+      get :authorize
       get :callback
     end
   end
